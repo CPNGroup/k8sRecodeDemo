@@ -1,0 +1,19 @@
+syntax = "proto3";  //语法声明
+
+option go_package="./;pb";
+
+package pb; //包名
+
+import "google/protobuf/empty.proto";
+
+// ZkService 微服务
+service ZkService {
+  rpc Get (google.protobuf.Empty) returns (Message) {} // 测试函数，获取命名空间
+}
+
+
+// Message 响应数据格式
+message Message {
+  repeated string ns = 1; // 数据
+}
+
